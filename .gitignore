@@ -17,7 +17,7 @@
 /web/bundles/
 
 *.iml
-
+.idea
 # Created by https://www.gitignore.io/api/phpstorm
 
 ### PhpStorm ###
