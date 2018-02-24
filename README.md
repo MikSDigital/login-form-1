@@ -15,6 +15,10 @@ LOGIN FORM test , Symfony Standard Edition, v.3.4.5
 * generate migration ```bin/console doctrine:migrations:diff```
 * run migration: ```bin/console doctrine:migrations:migrate```
 * load fixtures: ```php bin/console doctrine:fixtures:load```
+* create Security controller in AppBundle
+* google for "How to Build a Traditional Login Form"
+* copy code from their loginAction
+
 
 
 
