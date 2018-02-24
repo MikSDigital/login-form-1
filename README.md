@@ -13,6 +13,8 @@ LOGIN FORM test , Symfony Standard Edition, v.3.4.5
 * add Doctrine ORM mapping annotations
 * install Doctrine migration bundle : ```composer require doctrine/doctrine-migrations-bundle```
 * generate migration ```bin/console doctrine:migrations:diff```
+* run migration: ```bin/console doctrine:migrations:migrate```
+* load fixtures: ```php bin/console doctrine:fixtures:load```
 
 
 
