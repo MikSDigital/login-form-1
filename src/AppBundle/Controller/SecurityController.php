@@ -6,6 +6,8 @@ namespace AppBundle\Controller;
 use AppBundle\Form\LoginForm;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends Controller
 {
@@ -13,10 +15,8 @@ class SecurityController extends Controller
      * @Route("/login", name="security_login")
      */
 
-    public function loginAction()
+    public function loginAction(AuthenticationUtils $authenticationUtils)
     {
-        $authenticationUtils = $this->get('security.authentication_utils');
-
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
 
@@ -30,8 +30,8 @@ class SecurityController extends Controller
         return $this->render(
             'security/login.html.twig',
             array(
-                'form' => $form->createView(),
-                'error'         => $error,
+                'form'  => $form->createView(),
+                'error' => $error,
             )
         );
     }

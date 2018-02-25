@@ -33,3 +33,9 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    AppBundle\Security\LoginFormAuthenticator:
+          arguments:
+              - '@Symfony\Component\Form\FormFactoryInterface'
+              - '@Doctrine\ORM\EntityManagerInterface'
+              - '@Symfony\Component\Routing\Matcher\UrlMatcherInterface'
