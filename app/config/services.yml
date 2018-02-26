@@ -38,4 +38,5 @@ services:
           arguments:
               - '@Symfony\Component\Form\FormFactoryInterface'
               - '@Doctrine\ORM\EntityManagerInterface'
-              - '@Symfony\Component\Routing\Matcher\UrlMatcherInterface'
+              - '@Symfony\Component\Routing\RouterInterface'
+          autowire: true

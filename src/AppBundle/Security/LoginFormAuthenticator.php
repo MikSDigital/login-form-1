@@ -16,6 +16,8 @@ use Symfony\Component\Security\Http\Util\TargetPathTrait;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
+use Symfony\Component\Security\Core\Security;
+
 class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 {
     use TargetPathTrait;
@@ -40,6 +42,11 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
             $data = $form->getData();
 
+            $request->getSession()->set(
+                Security::LAST_USERNAME,
+                $data['_username']
+            );
+
             return $data;
         }
 
@@ -49,6 +56,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
         $username = $credentials['_username'];
+
         return $this->em->getRepository('AppBundle:User')->findOneBy([
             'email' => $username
         ]);
