@@ -11,5 +11,9 @@
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+
+    {% if is_granted('ROLE_USER') %}
+        <li><a href="{{ path('security_logout') }}">LOGOUT</a></li>
+    {% endif %}
     </body>
 </html>
