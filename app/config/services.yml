@@ -35,8 +35,14 @@ services:
     #         $someArgument: 'some_value'
 
     AppBundle\Security\LoginFormAuthenticator:
-          arguments:
-              - '@Symfony\Component\Form\FormFactoryInterface'
-              - '@Doctrine\ORM\EntityManagerInterface'
-              - '@Symfony\Component\Routing\RouterInterface'
-          autowire: true
+        arguments:
+            - '@Symfony\Component\Form\FormFactoryInterface'
+            - '@Doctrine\ORM\EntityManagerInterface'
+            - '@Symfony\Component\Routing\RouterInterface'
+        autowire: true
+
+    AppBundle\Doctrine\HashPasswordListener:
+        autowire: true
+        arguments:
+            - '@security.password_encoder'
+        tags: ['doctrine.event_subscriber']
