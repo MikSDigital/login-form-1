@@ -17,6 +17,8 @@ class AppFixtures extends Fixture
             $user = new User();
 
             $user->setEmail('user+' . $i . '@gmail.com');
+            $user->setPlainPassword('secret');
+
             $manager->persist($user);
         }
 
