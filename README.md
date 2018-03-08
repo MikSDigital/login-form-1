@@ -32,6 +32,8 @@ LOGIN FORM test , Symfony Standard Edition, v.3.4.5
 #### Authorization
 1) add ```access_controle``` key in security.yml
 
+after adding roles in User entity run ```php bin/console doctrine:migrations:diff```
+
 
 
 
