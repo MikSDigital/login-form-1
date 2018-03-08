@@ -27,6 +27,11 @@ LOGIN FORM test , Symfony Standard Edition, v.3.4.5
 2) read the username and password from the request
 3) load the user object from database
 
+......
+
+#### Authorization
+1) add ```access_controle``` key in security.yml
+
 
 
 
